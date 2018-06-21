@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rice.dao.UserDao">
+    <resultMap id="result" type="com.rice.entity.User">
+        <id property="userId" column="userId"/>  <!-- id相当于resultmap的引用的唯一标识-->
+        <result property="name" column="name"/>  <!-- property对应javabean的属性名，column对应数据库字段名 -->
+        <result property="age" column="age"/>
+    </resultMap>
+    <sql id="sql_select">
+        SELECT
+            userId,
+            name,
+            age
+        FROM user
+    </sql>
+    <select id="getUserInfo" resultMap="result">
+        <include refid="sql_select"/>
+    </select>
+
+</mapper>

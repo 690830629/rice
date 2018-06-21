@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 设置类型别名（在书写XXXMapper.xml配置文件时，其中的全路径名可以使用别名代替） -->
+    <typeAliases>
+        <typeAlias type="com.rice.entity.User" alias="user"/>
+    </typeAliases>
+</configuration>
