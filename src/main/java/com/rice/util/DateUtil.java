@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DateUtil {
-   static SimpleDateFormat sdf=new SimpleDateFormat("yyyy-mm-dd");
+   static SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 
    public static Date parse(String date) throws ParseException {
        if(Validation.isEmpty(date)){
@@ -81,11 +81,6 @@ public class DateUtil {
     }
 
     public static void main(String[] args) {
-        System.out.println(currentTimeStamp());
-
-        Date str = DateUtil.transForDate(1529489880L);
-        Date strq = DateUtil.transForDatejjj(1529489880000L);
-
-        System.out.println(strq);
+        System.out.println(DateUtil.format(new Date()));
     }
 }
