@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <script src="./static/js/angular.js"></script>
+    <script src="./static/controller/User.js"></script>
+    <link rel="stylesheet" href="./static/css/bootstrap.css" type="text/css" />
+</head>
+<body>
+
+<div ng-controller="myCtrl">
+    <table class="table table-striped">
+        <thead><tr>
+            <th>姓名</th>
+            <th>年龄</th>
+        </tr></thead>
+        <tbody><tr ng-repeat="user in users">
+            <td>{{ user.name }}</td>
+            <td>{{ user.age }}</td>
+        </tr></tbody>
+    </table>
+</div>
+</body>
+
+</html>

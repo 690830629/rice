@@ -3,7 +3,7 @@
         "http://java.sun.com/dtd/web-app_2_3.dtd" >
 <web-app>
     <welcome-file-list><!--指定欢迎页面-->
-        <welcome-file>login.html</welcome-file>
+        <welcome-file>user.html</welcome-file>
     </welcome-file-list>
     <!--如果你的DispatcherServlet拦截"/"，为了实现REST风格，拦截了所有的请求，那么同时对*.js,*.jpg等静态文件的访问也就被拦截了。-->
     <!--方案一：激活Tomcat的defaultServlet来处理静态文件-->
