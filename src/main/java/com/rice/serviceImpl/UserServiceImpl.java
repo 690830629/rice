@@ -16,4 +16,12 @@ public class UserServiceImpl implements UserService {
     public List<User> getUserInfo() {
        return  userDao.getUserInfo();
     }
+
+    @Override
+    public User selectByPrimaryKey(Integer userId) {
+        User user=new User();
+        user.setAge(22);
+        user.setName("wanglei");
+        return user;
+    }
 }

@@ -5,6 +5,7 @@ import com.rice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
@@ -33,4 +34,16 @@ public class UserController {
         map.put("age", 24);
         return map;
     }
+
+    @RequestMapping(value = "getUserInfo", method = RequestMethod.GET)
+    private User selectByPrimaryKey(
+            @RequestParam(value = "userId", defaultValue = "0") String userId) {
+        try {
+            return userService.selectByPrimaryKey(Integer.parseInt(userId));
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return null;
+    }
+
 }

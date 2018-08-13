@@ -6,4 +6,7 @@ import java.util.List;
 
 public interface UserService {
      List<User> getUserInfo();
+
+     User selectByPrimaryKey(Integer userId);
+
 }
