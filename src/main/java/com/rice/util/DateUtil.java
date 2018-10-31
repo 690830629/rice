@@ -1,11 +1,19 @@
 package com.rice.util;
 
+import com.google.common.collect.Lists;
+import com.rice.entity.User;
+import lombok.extern.log4j.Log4j;
+import org.joda.time.DateTime;
+
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+import java.util.Iterator;
+import java.util.List;
+@Log4j
 public class DateUtil {
-   static SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+   static SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
    public static Date parse(String date) throws ParseException {
        if(Validation.isEmpty(date)){
@@ -79,8 +87,13 @@ public class DateUtil {
         }
        return new Date(s.longValue());
     }
+    public static DateTime withYearMonthDay(Date day) {
+        DateTime dateTime = new DateTime(day);
+        return new DateTime(dateTime.getYear(), dateTime.getMonthOfYear(), dateTime.getDayOfMonth(), 0, 0);
+    }
 
     public static void main(String[] args) {
-        System.out.println(DateUtil.format(new Date()));
+        log.error("世界这么大");
     }
+
 }

@@ -72,6 +72,14 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:config/applicationContext*.xml</param-value>
     </context-param>
+    <!--由Sprng载入的Log4j配置文件位置 -->
+    <context-param>
+        <param-name>log4jConfigLocation</param-name>
+        <param-value>classpath:log/log4j.xml</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+    </listener>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>

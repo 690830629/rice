@@ -2,6 +2,8 @@ package com.rice.controller;
 
 import com.rice.entity.User;
 import com.rice.service.UserService;
+import lombok.extern.log4j.Log4j;
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@Log4j
 public class UserController {
     @Autowired
     private UserService userService;
@@ -20,8 +23,13 @@ public class UserController {
     @RequestMapping(value = "getUserInfo", method = RequestMethod.GET)
     private List<User> getUserInfo() {
         try {
-            return userService.getUserInfo();
+            List list=null;
+            List<User>  userList= userService.getUserInfo();
+            list.add("1");
+            log.info("实际这么大");
+            return userList;
         } catch (Exception e) {
+            log.error("error",e);
             System.out.println(e);
         }
         return null;
@@ -35,7 +43,7 @@ public class UserController {
         return map;
     }
 
-    @RequestMapping(value = "getUserInfo", method = RequestMethod.GET)
+    @RequestMapping(value = "getUserInfo1", method = RequestMethod.GET)
     private User selectByPrimaryKey(
             @RequestParam(value = "userId", defaultValue = "0") String userId) {
         try {

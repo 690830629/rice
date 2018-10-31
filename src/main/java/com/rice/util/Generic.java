@@ -1,6 +1,10 @@
 package com.rice.util;
 
+import com.google.common.collect.Lists;
+import com.rice.entity.User;
+
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -31,7 +35,29 @@ public class Generic {
     }
 
     public static void main(String[] args) {
+        {
 
+            List<User> listUser= Lists.newArrayList();
+            for(int i=0;i<10;i++)
+            {
+                User user=new User();
+                user.setAge(i);
+                listUser.add(user);
+            }
+            for(User user:listUser){
+                System.out.println("之前"+user.getAge());
+            }
+           for(User user:listUser){
+                if(user.getAge()==2 || user.getAge()==4){
+                    listUser.remove(user);
+                    break;
+                }
+           }
+            for(User user:listUser){
+                System.out.println("之后"+user.getAge());
+            }
+
+        }
     }
 
 }
