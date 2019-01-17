@@ -1,13 +1,6 @@
 package com.rice.util;
 
-import com.google.common.collect.Lists;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-
-import static sun.jvm.hotspot.code.CompressedStream.L;
 
 public class Array {
     public static void main(String[] args) {

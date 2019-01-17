@@ -1,9 +1,14 @@
 package com.rice.util;
 
+import com.google.common.base.Joiner;
+import com.google.common.collect.Lists;
 import org.joda.time.DateTime;
 
-import java.math.BigDecimal;
+import java.text.ParseException;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class DateJoda {
 
@@ -54,6 +59,12 @@ public class DateJoda {
         int hour = dateTime.getHourOfDay();
         return new DateTime(year, month, day, hour, 0);
     }
+    public static DateTime withYearMonthDay(DateTime dateTime) {
+        int year = dateTime.getYear();
+        int month = dateTime.getMonthOfYear();
+        int day = dateTime.getDayOfMonth();
+        return new DateTime(year, month, day, 0,0);
+    }
     public static boolean IsZero(String str){
         if(!str.contains(".")){
             return true;
@@ -67,30 +78,12 @@ public class DateJoda {
     }
 
 
-    public static void main(String[] args) {
-//        BigDecimal amt = new BigDecimal(380.10);
-//        BigDecimal[] results = amt.divideAndRemainder(BigDecimal.valueOf(3));
-//        amt.setScale(4,BigDecimal.ROUND_HALF_UP);
-//        System.out.println( IsZero(String.valueOf(amt)));
-
-        BigDecimal aveSellPrice=new BigDecimal("126.6667");
-        BigDecimal setnum=new BigDecimal(3);
-        BigDecimal sellPrice=aveSellPrice.multiply(setnum);
-        BigDecimal finalSellPrice=sellPrice;
-        sellPrice = sellPrice.setScale(1, BigDecimal.ROUND_HALF_UP);
-        System.out.println(sellPrice);
-        try {
-            BigDecimal d = sellPrice.divide(aveSellPrice);
-        } catch (ArithmeticException e) {
-            String msg = e.getMessage();
-            if (msg.indexOf("Non-terminating") > -1) {
-                System.out.println("Non-terminating");//无穷
-
-
-            }
-        }
-        sellPrice = finalSellPrice.setScale(1, BigDecimal.ROUND_HALF_UP);
-        System.out.println(sellPrice);
-
+    public static void main(String[] args) throws ParseException {
+        List<String> list= Lists.newArrayList();
+        list.add("1");
+        list.add("2");
+        list.add("13");
+        String result=Joiner.on(";").join(list);
+        System.out.println(result);
     }
 }
