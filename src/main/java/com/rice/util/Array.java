@@ -14,6 +14,7 @@ public class Array {
 //        System.out.println(sellPrice);
         String a = new BigDecimal("380.2").stripTrailingZeros().toPlainString();
         System.out.println(new BigDecimal(a));
+        System.out.println("能撤销么");
 
 
 //        aveSellPrice.setScale(6,BigDecimal.ROUND_HALF_UP);
