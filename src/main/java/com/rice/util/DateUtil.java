@@ -108,18 +108,10 @@ public class DateUtil {
         List<Integer> idList = Lists.newArrayList();
         idList.add(++index);
         idList.add(++index);
-        return  idList;
+        return idList;
     }
 
     public static void main(String[] args) {
-        Set<String> billIds = Sets.newHashSet();
-        String s = "1,2";
-        String[] t = s.split(",");
-        System.out.println(t);
-        for (int i = 0; i < t.length; i++) {
-            billIds.add(t[i]);
-        }
-        System.out.println(billIds.contains("3"));
+        System.out.println(format(transForDate(1548901147L)));
     }
-
 }
