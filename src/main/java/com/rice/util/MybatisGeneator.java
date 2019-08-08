@@ -20,6 +20,8 @@ public class MybatisGeneator {
         MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
         myBatisGenerator.generate(null);
     }
-
 }
+
+
+
 

@@ -83,4 +83,9 @@ public class User {
         result = prime * result + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
         return result;
     }
+
+    @Override
+    public String toString() {
+        return String.format("年龄:%d,姓名:%s",this.getAge(),this.getName());
+    }
 }

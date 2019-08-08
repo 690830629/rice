@@ -1,11 +1,10 @@
 package com.rice.util;
 
+import com.google.common.collect.Lists;
 import org.joda.time.DateTime;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 public class Validation {
     public static boolean isEmpty(Object object) {
@@ -30,11 +29,10 @@ public class Validation {
     }
 
     public static void main(String[] args) {
-//        List<String> list=new ArrayList<String> ();
-        List<Object> list=new ArrayList<Object>();
-        list.add(new Integer(5));
-        list.add(new String("4"));
-        List to=new ArrayList();
-//
+        HashMap j=new HashMap();
+        Collections.emptyList();
+        Lists.newArrayList();
+        new ArrayList();
     }
+
 }

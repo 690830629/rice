@@ -1,6 +1,7 @@
 package com.rice.controller;
 
 import com.rice.entity.User;
+import com.rice.event.PostMessage;
 import com.rice.service.UserService;
 import lombok.extern.log4j.Log4j;
 import org.joda.time.DateTime;
@@ -19,6 +20,8 @@ import java.util.Map;
 public class UserController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private PostMessage postMessage;
 
     @RequestMapping(value = "getUserInfo", method = RequestMethod.GET)
     private List<User> getUserInfo() {
@@ -40,6 +43,7 @@ public class UserController {
         Map map = new HashMap<String, Object>();
         map.put("name", "rice");
         map.put("age", 24);
+        postMessage.postMessage();
         return map;
     }
 
