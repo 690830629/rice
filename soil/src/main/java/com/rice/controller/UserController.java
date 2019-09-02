@@ -1,5 +1,8 @@
 package com.rice.controller;
 
+import com.google.common.collect.HashBasedTable;
+import com.rice.SpringBean.MyFactoryBean;
+import com.rice.entity.Dog;
 import com.rice.entity.User;
 import com.rice.event.PostMessage;
 import com.rice.service.UserService;
@@ -22,6 +25,8 @@ public class UserController {
     private UserService userService;
     @Autowired
     private PostMessage postMessage;
+    @Autowired
+    private MyFactoryBean myFactoryBean;
 
     @RequestMapping(value = "getUserInfo", method = RequestMethod.GET)
     private List<User> getUserInfo() {
@@ -39,12 +44,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "test", method = RequestMethod.GET)
-    public Map test() {
-        Map map = new HashMap<String, Object>();
-        map.put("name", "rice");
-        map.put("age", 24);
-        postMessage.postMessage();
-        return map;
+    public void test() {
+        System.out.println(myFactoryBean);
     }
 
     @RequestMapping(value = "getUserInfo1", method = RequestMethod.GET)

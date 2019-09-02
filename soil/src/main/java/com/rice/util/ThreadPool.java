@@ -52,6 +52,12 @@ public class ThreadPool {
                 }
             }
         });
+        th.execute(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        });
     }
 
     public static void main(String[] args) {

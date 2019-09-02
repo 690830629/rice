@@ -1,6 +1,8 @@
 package com.rice.util;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Array {
     public static void main(String[] args) {
