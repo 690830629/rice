@@ -15,8 +15,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <jdk.source.version>1.8</jdk.source.version>
+        <jdk.target.version>1.8</jdk.target.version>
         <maoyan-show-mpm-api.version>1.0.0</maoyan-show-mpm-api.version>
     </properties>
 
@@ -28,6 +28,11 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>4.3.8.RELEASE</version>
+        </dependency>
+        <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.3.1</version>
@@ -35,7 +40,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.14.8</version>
+            <version>1.16.16</version>
         </dependency>
         <dependency>
             <groupId>joda-time</groupId>
@@ -93,6 +98,11 @@
             <artifactId>spring-jdbc</artifactId>
             <version>4.0.4.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>4.3.8.RELEASE</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.mybatis.generator/mybatis-generator-core -->
         <dependency>
             <groupId>org.mybatis.generator</groupId>
@@ -140,16 +150,23 @@
             <artifactId>commons-io</artifactId>
             <version>2.1</version>
         </dependency>
-        <dependency>
-            <groupId>com.maoyan</groupId>
-            <artifactId>maoyan-show-mpm-api</artifactId>
-            <version>${maoyan-show-mpm-api.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.maoyan</groupId>
-            <artifactId>maoyan-show-util</artifactId>
-            <version>1.0.2</version>
-        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>com.maoyan</groupId>-->
+            <!--<artifactId>maoyan-show-mpm-api</artifactId>-->
+            <!--<version>${maoyan-show-mpm-api.version}</version>-->
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<groupId>xmd-commom-log4j2</groupId>-->
+                    <!--<artifactId>log4j-slf4j-impl</artifactId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.maoyan</groupId>-->
+            <!--<artifactId>maoyan-show-util</artifactId>-->
+            <!--<version>1.0.2</version>-->
+        <!--</dependency>-->
     </dependencies>
 
 
@@ -157,5 +174,16 @@
         <finalName>rice</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
         </pluginManagement>
+        <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>2.5.1</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
+        </plugins>
     </build>
 </project>

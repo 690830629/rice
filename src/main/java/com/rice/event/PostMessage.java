@@ -19,12 +19,12 @@ public class PostMessage {
         User user = new User();
         user.setName("王蕾CEO");
         user.setAge(26);
-        Dog dog=new Dog();
-        dog.setName("旺财");
-        dog.setAge(1);
+//        Dog dog=new Dog();
+//        dog.setAge(1);
+//        dog.setName("fff");
         eventBus.register(acceptMessage);
         eventBus.post(user);
-        eventBus.post(dog);
+//        eventBus.post(dog);
     }
 
 }
