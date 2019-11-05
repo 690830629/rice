@@ -27,9 +27,7 @@ public class UserController {
     @RequestMapping(value = "getUserInfo", method = RequestMethod.GET)
     private List<User> getUserInfo() {
         try {
-            List list=null;
             List<User>  userList= userService.getUserInfo();
-            list.add("1");
             return userList;
         } catch (Exception e) {
             System.out.println(e);
@@ -40,7 +38,7 @@ public class UserController {
     @RequestMapping(value = "test", method = RequestMethod.GET)
     public void test() {
 
-
+        System.out.println("fff");
         System.out.println(myFactoryBean);
     }
 
@@ -48,6 +46,7 @@ public class UserController {
     private User selectByPrimaryKey(
             @RequestParam(value = "userId", defaultValue = "0") String userId) {
         try {
+            System.out.println("进来了吗额");
             return userService.selectByPrimaryKey(Integer.parseInt(userId));
         } catch (Exception e) {
             System.out.println(e);
