@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class Reentrant {
     public static void main(String[] args) {
-        ReentrantLock lock=new ReentrantLock(true);
+        ReentrantLock lock=new ReentrantLock(false);
 
         Condition condition;
             lock.lock();
