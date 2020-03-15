@@ -1,6 +1,8 @@
 package com.rice.controller;
 
+import com.rice.SpringBean.ContextApplication;
 import com.rice.SpringBean.MyFactoryBean;
+import com.rice.entity.Dog;
 import com.rice.entity.User;
 import com.rice.event.PostMessage;
 import com.rice.service.UserService;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @RestController
@@ -25,21 +28,24 @@ public class UserController {
 
 
     @RequestMapping(value = "getUserInfo", method = RequestMethod.GET)
-    private List<User> getUserInfo() {
+    private void getUserInfo() {
         try {
-            List<User>  userList= userService.getUserInfo();
-            return userList;
+            for(int i=0;i<1000000000;i++){
+                Dog g=new Dog();
+                System.out.println("输出了小狗");
+            }
         } catch (Exception e) {
             System.out.println(e);
         }
-        return null;
     }
 
     @RequestMapping(value = "test", method = RequestMethod.GET)
     public void test() {
-
         System.out.println("fff");
         System.out.println(myFactoryBean);
+        System.out.println(ContextApplication.getBean("myFactoryBean"));
+        System.out.println( ContextApplication.getBean("&myFactoryBean"));
+
     }
 
     @RequestMapping(value = "getUserInfo1", method = RequestMethod.GET)

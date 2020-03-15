@@ -8,6 +8,7 @@ import org.joda.time.DateTime;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -111,7 +112,17 @@ public class DateUtil {
         return idList;
     }
 
-    public static void main(String[] args) {
-        System.out.println(format(transForDate(1548901147L)));
+    public static void main(String[] args) throws ParseException {
+       Date date=new Date();
+       Date date1=DateUtil.parse("2019-12-23");
+       List<Date> dateList=Lists.newArrayList();
+       dateList.add(date);
+       dateList.add(date1);
+//       dateList.sort(new Comparator<Date>() {
+//           @Override
+//           public int compare(Date o1, Date o2) {
+//               return  o1.compareTo(o2);
+//           }
+//       });
     }
 }

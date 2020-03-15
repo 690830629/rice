@@ -1,5 +1,7 @@
 package com.rice.util;
 
+import com.rice.entity.Dog;
+
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
 public class AQS extends AbstractQueuedSynchronizer {
@@ -15,6 +17,13 @@ public class AQS extends AbstractQueuedSynchronizer {
 
     public void getSynchronizer(){
          AbstractQueuedSynchronizer abstractQueuedSynchronizer;
+
+    }
+
+
+
+    public static void main(String[] args) {
+
 
     }
 }

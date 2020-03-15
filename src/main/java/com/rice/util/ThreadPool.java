@@ -27,6 +27,7 @@ public class ThreadPool {
           };
 
         ThreadPoolExecutor th = new ThreadPoolExecutor(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue , rejectionHandler);
+        th.shutdown();
         List<Runnable> runnableList=Lists.newArrayList();
         runnableList.add(new Runnable() {
             @Override
@@ -61,10 +62,20 @@ public class ThreadPool {
     }
 
     public static void main(String[] args) {
-        a();
-        for(int i=0;i<1000;i++){
-            System.out.println("你是第"+i+"个小朋友");
-        }
+        ThreadLocal<Integer> threadLocal=new ThreadLocal<>();
+        threadLocal.set(1);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                threadLocal.set(2);
+            }
+        });
+        System.out.println(threadLocal.get());
+        System.out.println(threadLocal.get());
+        System.out.println(threadLocal.get());
+        System.out.println(threadLocal.get());
+
 
     }
 }

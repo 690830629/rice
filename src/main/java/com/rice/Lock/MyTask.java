@@ -1,4 +1,4 @@
-package com.rice.util;
+package com.rice.Lock;
 
 import java.util.Timer;
 import java.util.TimerTask;
